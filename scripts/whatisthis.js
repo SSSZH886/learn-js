@@ -9,4 +9,4 @@ const person = {
     }
 }
 
-console.log(person.fullName());
+console.log(person.fullName()); // answer is John Doe
