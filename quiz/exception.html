@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Error Handling with Array Map</title>
 </head>
+
 <body>
 
   <h1>Error Handling with Array Map</h1>
@@ -24,8 +26,19 @@
       // Using map to calculate the square root of each number
       // Use Math.sqrt(number) to calculate sq root
       const squareRoots = numbers.map(number => {
-        return 0
-    });
+        try {
+          if (isNaN(number)) throw `${number} is not a valid number`
+          if (number < 0) throw `${number} is negative`
+          var sr = number * number
+          return sr
+        }
+        catch (err) {
+          console.log('Error', `${err}`)
+          return NaN
+
+        }
+
+      });
 
       // Displaying the original and transformed arrays
       console.log('Original Numbers Array:', numbers);
@@ -34,4 +47,5 @@
   </script>
 
 </body>
+
 </html>
